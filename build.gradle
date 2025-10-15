@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
+    compileOnly 'jakarta.platform:jakarta.jakartaee-web-api:10.0.0'
+    compileOnly 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.0.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
+war {
+    archiveFileName = 'webapp.war'
+}
